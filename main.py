@@ -44,7 +44,7 @@ def chat(req: ChatRequest):
 
     # STEP 1 — Ask OpenAI what function to call
     response = client.chat.completions.create(
-        model="gpt-5-nano-2025-08-07",               # ✅ GPT-5 NANO ENABLED
+        model="gpt-4o-mini",               
         messages=req.history + [{"role": "user", "content": req.message}],
         functions=openai_functions,
         function_call="auto"
