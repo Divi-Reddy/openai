@@ -111,8 +111,9 @@ def chat(req: ChatRequest):
 
         return {"response": final.choices[0].message["content"]}
 
-    # No tool call → take direct response
-    print("\n💬 DIRECT RESPONSE (No function needed):")
-    print(msg["content"])
+# No function call case
+print("\n💬 DIRECT RESPONSE (No function needed):")
+print(msg.content)
 
-    return {"response": msg["content"]}
+return {"response": msg.content}
+
